@@ -3,6 +3,14 @@
 
 import random
 
+import os
+
+
+
+PLAYER_NAME = os.getenv("PLAYER_NAME")
+print(PLAYER_NAME)
+
+
 print("Rock, Paper, Scissors, Shoot!")
 
 
