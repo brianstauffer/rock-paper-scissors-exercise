@@ -5,11 +5,17 @@ import random
 
 import os
 
+import dotenv
+
+dotenv.load_dotenv()
+
+
+
 
 
 PLAYER_NAME = os.getenv("PLAYER_NAME")
-print(PLAYER_NAME)
-
+#print("Welcome",PLAYER_NAME,"to 'Rock, Paper, Scissors, Shoot!'")
+print("Welcome " + PLAYER_NAME + " to 'Rock, Paper, Scissors, Shoot!'")
 
 print("Rock, Paper, Scissors, Shoot!")
 
