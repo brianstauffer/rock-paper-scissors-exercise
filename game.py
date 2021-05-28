@@ -18,6 +18,8 @@ print ("------------------------------")
 
 valid_options = ["rock", "paper", "scissors"]
 
+# get the player's choice and validate for errors
+# validation loop code adapted from stackoverflow.com/questions/23294658
 while True:
     while True:
         try:
