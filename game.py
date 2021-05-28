@@ -1,29 +1,22 @@
 
 # game.py
 
+# get the necessary add ons
 import random
-
 import os
-
 import dotenv
-
 dotenv.load_dotenv()
 
-
-
-
-
+# get the player's name
 PLAYER_NAME = os.getenv("PLAYER_NAME")
-#print("Welcome",PLAYER_NAME,"to 'Rock, Paper, Scissors, Shoot!'")
+print ("--------------------")
 print("Welcome " + PLAYER_NAME + " to 'Rock, Paper, Scissors, Shoot!'")
-
-print("Rock, Paper, Scissors, Shoot!")
-
+print ("--------------------")
 
 user_choice = input("Please choose one of 'rock', 'paper', 'scissors':")
 
-print("USER CHOICE:", user_choice)
-
+print(PLAYER_NAME + "'s CHOICE:", user_choice)
+print ("--------------------")
 # validate the input such that only if it is one of hte expected values
 # ...will we continue with the rest of the program
 # ...otherwise we will stop the program before it tries to do anything else
@@ -32,21 +25,29 @@ print("USER CHOICE:", user_choice)
 # and
 # or
 
-if (user_choice == "rock") or (user_choice == "paper") or (user_choice == "scissors"):
-    print("VALID. KEEP GOING")
-else:
-    print("OOPS, invalid input. Please try again.")
-    exit()
+# if (user_choice == "rock") or (user_choice == "paper") or (user_choice == "scissors"):
+    #print("VALID. KEEP GOING")
+# else:
+    #print("OOPS, invalid input. Please try again.")
+    #exit()
 
+# if (user_choice == "rock") or (user_choice == "paper") or (user_choice == "scissors"):
+
+# validate player's choice
 valid_options = ["rock", "paper", "scissors"]
+
+if (user_choice not in valid_options):    
+    print("OOPS, invalid input. Please try again!")
+    #exit()
+    user_choice = input("Please choose one of 'rock', 'paper', 'scissors':")
+
+# computer's choice
 computer_choice = random.choice(valid_options)
 print("COMPUTER CHOICE: ", computer_choice)
+print ("--------------------")
 
 # determine who won!
-
-
 # adapted from code shared by Jan in Slack
-
 if user_choice == "rock":
     if computer_choice == "rock":
         print("IT'S A TIE")
@@ -71,5 +72,5 @@ elif user_choice == "scissors":
 
 # configure player name via env variables
 
-
+print ("--------------------")
 print("THIS IS THE END OF OUR GAME, PLEASE PLAY AGAIN")
