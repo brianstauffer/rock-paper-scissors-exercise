@@ -11,9 +11,24 @@ dotenv.load_dotenv()
 PLAYER_NAME = os.getenv("PLAYER_NAME")
 print ("--------------------")
 print("Welcome " + PLAYER_NAME + " to 'Rock, Paper, Scissors, Shoot!'")
+print (" ")
 print ("--------------------")
 
-user_choice = input("Please choose one of 'rock', 'paper', 'scissors':")
+valid_options = ["rock", "paper", "scissors"]
+
+while True:
+    try:
+        user_choice = input("Please choose one of 'rock', 'paper', 'scissors':")
+        if user_choice in valid_options:
+            break
+        else:
+            print("OOPS, invalid input. Please try again.")
+            print (" ")
+            print ("--------------------")
+    except:
+       continue
+
+#user_choice = input("Please choose one of 'rock', 'paper', 'scissors':")
 
 print(PLAYER_NAME + "'s CHOICE:", user_choice)
 print ("--------------------")
@@ -34,12 +49,11 @@ print ("--------------------")
 # if (user_choice == "rock") or (user_choice == "paper") or (user_choice == "scissors"):
 
 # validate player's choice
-valid_options = ["rock", "paper", "scissors"]
 
-if (user_choice not in valid_options):    
-    print("OOPS, invalid input. Please try again!")
+
+#if (user_choice not in valid_options):    
+    #print("OOPS, invalid input. Please try again!")
     #exit()
-    user_choice = input("Please choose one of 'rock', 'paper', 'scissors':")
 
 # computer's choice
 computer_choice = random.choice(valid_options)
@@ -50,27 +64,25 @@ print ("--------------------")
 # adapted from code shared by Jan in Slack
 if user_choice == "rock":
     if computer_choice == "rock":
-        print("IT'S A TIE")
+        print("IT'S A TIE...TRY AGAIN?")
     elif computer_choice == "paper":
-        print("OH, THE COMPUTER WON...")
+        print("OH, THE COMPUTER WON...BETTER LUCK NEXT TIME")
     elif computer_choice == "scissors":
         print("YOU WON! CONGRATS!")
 elif user_choice == "paper":
     if computer_choice == "rock":
         print("YOU WON! CONGRATS!")
     elif computer_choice == "paper":
-        print("IT'S A TIE")
+        print("IT'S A TIE...TRY AGAIN?")
     elif computer_choice == "scissors":
-        print("OH, THE COMPUTER WON...")
+        print("OH, THE COMPUTER WON...BETTER LUCK NEXT TIME")
 elif user_choice == "scissors":
     if computer_choice == "rock":
-        print("OH, THE COMPUTER WON...")
+        print("OH, THE COMPUTER WON...BETTER LUCK NEXT TIME")
     elif computer_choice == "paper":
         print("YOU WON! CONGRATS!")
     elif computer_choice == "scissors":
-        print("IT'S A TIE")
-
-# configure player name via env variables
+        print("IT'S A TIE...TRY AGAIN?")
 
 print ("--------------------")
-print("THIS IS THE END OF OUR GAME, PLEASE PLAY AGAIN")
+print("THIS IS THE END OF OUR GAME, PLEASE PLAY AGAIN!")
